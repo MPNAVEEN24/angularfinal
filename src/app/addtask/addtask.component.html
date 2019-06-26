@@ -1,0 +1,45 @@
+<div class="container-fluid">
+     <form>
+    
+    <div class="form group">
+     
+      <label>Task: </label>
+      <input type="text" required class="form-control" name="taskName" id="taskName" [(ngModel)]="model.taskName">
+    
+    </div>
+    
+    <div class="form group">
+     
+        <label>Priority: </label>
+        <input type="range" min=0 max=30 required class="form-control" name="priority" id="priority" [(ngModel)]="model.priority">
+      
+    </div>
+    
+    <div class="form group">
+     
+        <label>Parent Task: </label>
+        <input type="text" required class="form-control" name="parentTask" id="parentTask" [(ngModel)]="model.parentTask">
+      
+    </div>
+    
+    <div class="form group">
+     
+        <label>Start Date:  </label>
+        <input type="date" required class="form-control" name="startDate" id="startDate" [(ngModel)]="model.startDate">
+      
+    </div>
+    
+    <div class="form group">
+     
+        <label>End Date;  </label>
+        <input type="date" required class="form-control" name="endDate" id="endDate" [(ngModel)]="model.endDate">
+      
+    </div>
+    <div>
+    <button class="btn btn-primary" type="submit" (click)="createTask()">Add Task</button> &nbsp; &nbsp; &nbsp;
+    
+    <button class="btn btn-primary" type="reset">Reset </button>
+</div>
+    </form>
+    </div>
+    
