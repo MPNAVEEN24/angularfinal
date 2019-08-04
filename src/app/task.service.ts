@@ -23,6 +23,8 @@ export class TaskService {
   }
 
   deleteTask(taskId):Observable<any>{
+    	
+    console.log(taskId)
     return this.http.post(this.baseUrl+'/delete', taskId);
   }
 

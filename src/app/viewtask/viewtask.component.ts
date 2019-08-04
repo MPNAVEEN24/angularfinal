@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
 import { Task } from '../task';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-viewtask',
@@ -12,7 +13,8 @@ export class ViewtaskComponent implements OnInit {
    tasks:any;
    model:any
    search:any;
-  constructor(private taskService:TaskService) { }
+   projectsList:any
+  constructor(private taskService:TaskService,private projectService:ProjectService) { }
 
   fetchAll(){
     this.taskService.getallTasks().subscribe(res=>{
@@ -20,10 +22,14 @@ export class ViewtaskComponent implements OnInit {
       console.log(res);
     });
   }
-
+  
   ngOnInit() {
     this.model=new Task();
     this.fetchAll();
+
+    this.projectService.getAllProjects().subscribe(res=>{
+      this.projectsList=res;
+    })
   }
 
   onEdit(task){
